@@ -4,11 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib import animation
 
 class GameOfLife:
-    def __init__(self, row_m, col_n, num_iter, graph = False):
+    def __init__(self, row_m, col_n, num_iter):
         self.row_m = row_m
         self.col_n = col_n
         self.num_iter = num_iter
-        self.graph = graph
         #create a 3D array with row_m height, row_m width and num_iter depth
         self.golArray = np.ndarray((num_iter, row_m, col_n),dtype = int)
         #Initialize 3D array with zeros
