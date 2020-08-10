@@ -15,6 +15,6 @@ A cellular automaton is a theoretical machine that changes its internal state ba
 - Any live cell with more than three live neighbours dies, as if by overpopulation.
 - Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 ## Application
-Small codes in Python, C++, Golang and C# of game of life by John Conway.
+Small codes in Python, C++ and C# of game of life by John Conway.
 
 ![](https://raw.githubusercontent.com/acastellanos95/Game-of-Life/master/game-of-life.gif)
