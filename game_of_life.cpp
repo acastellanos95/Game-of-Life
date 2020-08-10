@@ -138,9 +138,6 @@ GameOfLife::~GameOfLife()
 {
 }
 
-void check_int(int a){
-}
-
 
 int main(){
     GameOfLife game(30,30,100);
