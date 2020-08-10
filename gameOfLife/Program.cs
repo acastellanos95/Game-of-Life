@@ -1,4 +1,5 @@
 ﻿using System;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace gameOfLife
 {
