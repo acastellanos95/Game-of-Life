@@ -2,6 +2,7 @@
 #include <vector>
 #include <random>
 #include <time.h>
+#include <unistd.h>
 
 class GameOfLife
 {
@@ -15,6 +16,7 @@ public:
     int rule(int c1, int c2, int c3, int c4, int c5, int c6, int c7, int c8, int c9);
     void shuffle();
     void applyRule();
+    void display();
     ~GameOfLife();
 };
 
@@ -90,6 +92,41 @@ void GameOfLife::shuffle()
     }
     
 }
+/* int time, bool repeat */
+void GameOfLife::display()
+{
+    int timer = 0;
+    // time = time * 1000000;
+    std::cout << "\x1b[2j";
+    std::cout << "\x1b[H";
+    while(true){
+        for (size_t iter = 0; iter < m_gol_array.size(); iter++)
+        {
+            std::cout << "\n"; 
+            for (size_t row = 0; row < m_gol_array[0].size(); row++)
+            {
+                std::cout << "\t"; 
+                for (size_t col = 0; col < m_gol_array[0][0].size(); col++)
+                {
+                    if(m_gol_array[iter][row][col] == 0){
+                        std::cout << " · ";
+                    }else{
+                        std::cout << " # ";
+                    }
+                }
+                std::cout << std::endl;
+            }
+
+            std::cout << "\x1b[H";
+            usleep(100000);
+        }
+        /* if(!repeat){
+            timer += 100000;
+            std::cout << timer << std::endl;
+            break;
+        } */
+    }
+}
 
 GameOfLife::GameOfLife(int row, int col, int iter) : 
     m_row(row), m_col(col), m_iter(iter)
@@ -106,12 +143,9 @@ void check_int(int a){
 
 
 int main(){
-    GameOfLife game(10,15,100);
-    game.print();
+    GameOfLife game(30,30,100);
     game.shuffle();
-    game.print();
     game.applyRule();
-    game.print();
-
+    game.display();
     return 0;
 }
