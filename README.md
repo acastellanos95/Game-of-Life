@@ -17,4 +17,4 @@ A cellular automaton is a theoretical machine that changes its internal state ba
 ## Application
 Small codes in Python, C++, Golang and C# of game of life by John Conway.
 
-![](https://66.media.tumblr.com/095abf33a07cc35be599bd3a9829c36f/tumblr_pmug54cZfE1s7skbro1_400.gif)
+![](https://raw.githubusercontent.com/acastellanos95/Game-of-Life/master/game-of-life.gif)
